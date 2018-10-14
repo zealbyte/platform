@@ -1,0 +1,28 @@
+{
+	"name": "zealbyte/platform",
+	"type": "library",
+	"description": "ZealByte Platform",
+	"keywords": [],
+	"homepage": "https://zealbyte.com",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Dustin Martella",
+			"email": "dustin.martella@zealbyte.com"
+		}
+	],
+	"require": {
+		"php": "^7.1.3",
+    "symfony/event-dispatcher": "~4.1",
+		"symfony/http-foundation": "~4.1",
+		"symfony/http-kernel": "~4.1",
+		"twig/twig": "^2.4"
+	},
+	"autoload": {
+		"psr-4": { "ZealByte\\Platform\\": "lib" },
+		"exclude-from-classmap": [
+			"/tests/"
+		]
+	},
+	"minimum-stability": "dev"
+}

@@ -1,0 +1,19 @@
+{% block javascripts %}
+
+	<script type="text/javascript" language="javascript">
+		{% if app.debug %} var debug = true; {% endif %}
+
+		var context = {
+			'packages': {{ package | json_encode | raw }},
+		}
+	</script>
+
+	{% for pkg in package.packages %}
+		{% for resource in pkg.resources %}
+			{% if resource.type == 'application/javascript' %}
+				<script src="{{asset(resource.name, pkg.name)}}"></script>
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+
+{% endblock javascripts %}

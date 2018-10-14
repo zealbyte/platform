@@ -1,0 +1,45 @@
+{% block component %}
+<h1>HI</h1>
+{% endblock component %}
+
+
+{% block form_component %}
+	{{ form(form) }}
+{% endblock form_component %}
+
+
+{% block form_stacked_component %}
+	{{ form(form, {'attr': {'class': 'uk-form-stacked'}}) }}
+{% endblock form_stacked_component %}
+
+
+{% block controller_component %}
+<div data-href="{{ path(_route, _route_parameters) }}"><a href="{{ path(_route, _route_parameters) }}">...</a></div>
+{% endblock controller_component %}
+
+
+{% block container_component %}
+{% for component in components %}
+{{ component.content | raw }}
+{% endfor %}
+{% endblock container_component %}
+
+
+{% block container_card %}
+<div class="{{ width_class | default('uk-width-2-3@l uk-width-1-2@xl') }}">
+	<div class="{{ card_class | default('uk-card uk-card-default uk-card-small') }}">
+		<div class="uk-card-body">
+			{{ component.content | raw }}
+		</div>
+	</div>
+</div>
+{% endblock container_card %}
+
+
+{% block container_grid_masonry %}
+<div class="uk-grid uk-grid-medium uk-grid-match" data-uk-grid="masonry: true">
+	{% for component in components %}
+	{{ block('container_card') }}
+	{% endfor %}
+</div>
+{% endblock container_grid_masonry %}

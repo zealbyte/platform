@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+	{% block head %}
+		<head>
+			{% include '@Platform/html_head.html.twig' %}
+		</head>
+	{% endblock head %}
+
+	{% block body %}
+		<body class="{{ body_classes | default([]) | join(' ') }}">
+			{{ content | raw }}
+
+			{% include '@Platform/html_footer.html.twig' %}
+		</body>
+	{% endblock body %}
+</html>

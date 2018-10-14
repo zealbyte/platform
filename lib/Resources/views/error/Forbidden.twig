@@ -1,0 +1,16 @@
+{% title "error_page.forbidden.title" | trans %}
+
+	<h2 class="card-title">
+		{{ icon('warning', 48) }}
+		{{- 'error_page.forbidden.header' | trans -}}
+	</h2>
+
+	<p class="card-text">{{ "error_page.forbidden.desc" | trans }}</p>
+
+	<hr>
+
+	<a href="index.html" class="btn btn-secondary icon-dark">
+		{{ icon('arrow_back', 18) }}
+		{{ "go.back" | trans }}
+	</a>
+

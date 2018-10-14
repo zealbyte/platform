@@ -1,0 +1,34 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{{ description }}" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+<!-- Add to homescreen for Chrome on Android -->
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="192x192" href="{{asset('android-desktop.png', 'images')}}">
+
+<!-- Add to homescreen for Safari on iOS -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="apple-mobile-web-app-title" content="Material Design Lite">
+<link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+<!-- Tile icon for Win8 (144x144 + tile color) -->
+<meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+<meta name="msapplication-TileColor" content="#3372DF">
+
+<link rel="shortcut icon" id="favicon" href="{{asset('favicon.ico', 'images')}}" />
+<link rel="apple-touch-icon-precomposed" href="{{asset('apple-touch-icon-precomposed.png', 'images')}}" />
+
+{% block title %}<title>{{ title }} - {{ name }}</title>{% endblock %}
+
+{% block stylesheets %}
+	{% for pkg in package.packages %}
+		{% for resource in pkg.resources %}
+			{% if resource.type == 'text/css' %}
+				<link rel="stylesheet" href="{{asset(resource.name, pkg.name)}}" media="all">
+			{% endif %}
+		{% endfor %}
+	{% endfor %}
+{% endblock %}

@@ -1,0 +1,15 @@
+{% title 'error_page.notfound.title' | trans %}
+
+	<h2 class="card-title">
+		{{ icon('error', 48) }}
+		{{- 'error_page.notfound.header' | trans -}}
+	</h2>
+
+	<p class="card-text">{{ "error_page.notfound.desc" | trans }}</p>
+
+	<hr>
+
+	<a href="index.html" class="btn btn-secondary icon-dark">
+		{{ icon('arrow_back', 18) }}
+		{{ "go.back" | trans }}
+	</a>
