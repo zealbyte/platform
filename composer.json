@@ -16,7 +16,8 @@
     "symfony/event-dispatcher": "~4.1",
 		"symfony/http-foundation": "~4.1",
 		"symfony/http-kernel": "~4.1",
-		"twig/twig": "^2.4"
+		"twig/twig": "^2.4",
+		"zealbyte/util": "^0.1"
 	},
 	"autoload": {
 		"psr-4": { "ZealByte\\Platform\\": "lib" },
