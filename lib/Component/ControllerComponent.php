@@ -32,7 +32,7 @@ namespace ZealByte\Platform\Component
 
 			if ($route_parameters)
 				foreach ($route_parameters as $parameter => $value)
-					$this->addRouteParameter($parameters, $value);
+					$this->addRouteParameter($parameter, $value);
 		}
 
 		/**
